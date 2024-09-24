@@ -1,18 +1,8 @@
 .userActivities {
-    /* background-color: white;
-    padding: 2px 1px;
-    margin: 0px 1px;
-    width: 100%;
-    flex: 1;
-    border-top-left-radius: 10px;
-    border-top-right-radius:10px;
-    border-bottom: 1px solid rgb(229, 227, 227);
-    cursor: pointer; */
     height: 80%;
     background-color: white;
     display: flex;
-    overflow-y: auto;
-    overflow-x: hidden;
+
     flex-direction: column;
 }
 .activityCard{
@@ -23,12 +13,6 @@
     box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
     transition: all ease-in-out 0.3s;
     padding: 0;
-    /* padding: 2px 1px; */
-    /* margin: 0px 1px; */
-    /* width: 100%; */
-    /* border-top-left-radius: 10px;
-    border-top-right-radius:10px; */
-    /* border-bottom: 1px solid rgb(229, 227, 227); */
 }
 .title {
     font-weight: bold;
@@ -75,3 +59,16 @@
     padding: 0 1%;
 
 }
+@media only screen and (min-width:992px) {
+    .userActivities{
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+  }
+  @media only screen and (max-width:991px) {
+    .activityCard{
+        margin: 2% 2%;
+        padding: 0;
+
+    }
+  }
