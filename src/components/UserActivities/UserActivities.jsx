@@ -1,6 +1,8 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../UserActivities/index.css'
 import ActivityCard from './ActivityCard';
+import LoadingCard from './LoadingCard';
+import Skeleton from 'react-loading-skeleton';
 const UserActivities = () => {
 
     const data =
@@ -49,13 +51,21 @@ const UserActivities = () => {
             }
         ];
 
-    
+    const [loading, setLoading] = useState(true)
+    useEffect(()=>{
+        setTimeout(()=>{
+            setLoading(false)
+        },2000)
+    },[])
     return (
         <div className='userActivities'>
-            <p className='title'>Activities</p>
+            <p className='title'><Skeleton count={3}/></p>
+            <div className='cards'>
+
             {
-                data.map((item,index)=><ActivityCard id={index} title = {item.title} body={item.body}/>)
+                loading?<LoadingCard/>:data.map((item,index)=><ActivityCard id={index} title = {item.title} body={item.body} key={index} />)
             }
+            </div>
         </div>
     )
 }
