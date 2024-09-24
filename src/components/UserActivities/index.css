@@ -1,0 +1,77 @@
+.userActivities {
+    /* background-color: white;
+    padding: 2px 1px;
+    margin: 0px 1px;
+    width: 100%;
+    flex: 1;
+    border-top-left-radius: 10px;
+    border-top-right-radius:10px;
+    border-bottom: 1px solid rgb(229, 227, 227);
+    cursor: pointer; */
+    height: 80%;
+    background-color: white;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+.activityCard{
+    background-color: white;
+    margin: 1% 2% 0% 2%;
+    border: 1px solid #eae6eb;
+    border-radius:5px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    transition: all ease-in-out 0.3s;
+    padding: 0;
+    /* padding: 2px 1px; */
+    /* margin: 0px 1px; */
+    /* width: 100%; */
+    /* border-top-left-radius: 10px;
+    border-top-right-radius:10px; */
+    /* border-bottom: 1px solid rgb(229, 227, 227); */
+}
+.title {
+    font-weight: bold;
+    padding: 0% 2% 0% 2%;
+    font-size:1.5em;
+    margin: 0;
+    margin-bottom: 1%;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.toggle {
+    display: none;
+}
+.titleRow{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0 1%;
+}
+.activityTitle{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+.showMore{
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    border-color: transparent;
+}
+.activityBody{
+    margin: 0;
+    padding: 0 1%;
+
+}
