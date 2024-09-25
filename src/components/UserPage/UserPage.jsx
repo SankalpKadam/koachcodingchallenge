@@ -8,7 +8,7 @@ const UserPage = () => {
   return (
     <div className='userPage'>
       <UserProfile id={id}/>
-      <UserActivities/>
+      <UserActivities id={id}/>
     </div>
   )
 }
