@@ -17,7 +17,7 @@ function App() {
         <UserActivities /> */}
         <Routes path='/'>
             <Route index element={<ListUsers/>}/>
-            <Route path='users/:id'/>
+            <Route path='users/:id' element={<UserPage/>}/>
           {/* <UserPage /> */}
         </Routes>
         </BrowserRouter>
