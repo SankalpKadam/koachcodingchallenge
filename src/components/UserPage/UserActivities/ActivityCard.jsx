@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 
-const ActivityCard = ({ id, title, body, showDate }) => {
+const ActivityCard = ({ id, title, body }) => {
+    // Individual card for each post of a user
     const myRef = useRef(null)
     const handleClick = (e) => {
         e.preventDefault()

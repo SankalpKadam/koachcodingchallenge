@@ -8,9 +8,16 @@ const UserActivities = ({id}) => {
     const [loading, setLoading] = useState(true)
     const [activities, setActivities] = useState([])
     const fetchActivities = async () => {
-        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
-        const result = await response.json()
-        setActivities(result)
+        try {
+            //fetching posts for a particular user
+            const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`,{
+                method:'GET'
+            })
+            const result = await response.json()
+            setActivities(result)
+        } catch (error) {
+            alert("Failed to fetch posts, please try again")
+        }
         setLoading(false)
     }
     useEffect(() => {
@@ -23,6 +30,7 @@ const UserActivities = ({id}) => {
             <p className='title'>Activity Feed</p>
             <div className='cards'>
                 {
+                    /*Show loader component until data is fetched */
                     loading ? <LoadingCard listCount={5} /> : activities.map((item, index) => <ActivityCard id={index} title={item.title} body={item.body} key={index} />)
                 }
             </div>

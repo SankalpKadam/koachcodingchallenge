@@ -2,6 +2,7 @@ import React from 'react'
 import Skeleton from 'react-loading-skeleton'
 
 const LoadingCard = ({listCount}) => {
+  // Loader component for the posts
   return (
         Array(listCount).fill(0).map((item, index)=>
         (
