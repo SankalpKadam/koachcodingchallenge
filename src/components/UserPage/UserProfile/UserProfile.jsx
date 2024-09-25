@@ -4,11 +4,9 @@ import Skeleton from 'react-loading-skeleton'
 const UserProfile = ({ id }) => {
     const addressRef = useRef(null)
     const [user, setUser] = useState({})
-    const [shown, setShown] = useState(false)
     const handleClick = (e) => {
         e.preventDefault()
-        addressRef.current.style.display = shown ? "none" : "block"
-        setShown(!shown)
+        addressRef.current.classList.toggle('showIt')
     }
     const fetchUser = async () => {
         try {
