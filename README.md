@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Koach Coding Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Candidate - ***Sankalp Kadam***
+Deployment Link - _https://koach-coding-challenge.vercel.app/_
 
-## Available Scripts
+### Technologies Used -
+_React_, _JavaScript_, _HTML_, _CSS_, _Vercel (For Deployment)_
 
-In the project directory, you can run:
+### Process
 
-### `npm start`
+1. Designing in Figma - Used Figma to develop a mock UI to have an idea of the webpage before starting to develop the frontend application
+2. Deciding on the component structure - Just decided the components I was going to use to make the frontend.
+    - HomePage - Renders the list of available users
+    - UserPage - Renders details and activities of each user
+3. Started by working on the UserPage since it was the most crucial requirement. Established responsive UI and integrated demo API calls to render demo data.
+4. Developed loading skeleton and added delay to network request to show those loading screens.
+5. Then started to work on HomePage, to render a list of users.
+6. Properly integrated the given API to fetch dynamic data.
+7. Performed manual testing to ensure proper error handling.
+8. Resolved the found issues and ensured no warnings existed for proper deployment.
+9. Chose vercel to deploy the project, since it has integration with github and redeploys the entire application whenever any new features are released.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Steps to run on local
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Ensure you have node and npm installed
+   `npm --version && node --version`
+2. Clone the source code from github
+   `git clone https://github.com/SankalpKadam/koachcodingchallenge.git`
+3. In the code directory, install all the necessary packages
+    `npm install`
+4. Start the application
+    `npm run start`
 
-### `npm test`
+### Improvements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. One improvement I can think of is the implementation of ***useMemo*** hook to reduce the number of API calls and thus optimize the web performance.
+2. Implementation of unit testing by using jest.
 
-### `npm run build`
+### My thoughts behind the design
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_Assumptions_ and how they align with my design
+1. 
+    - The post can contain futher details like media, larger text, so it would be better to have a list to display a short version of it and then clicking on it can show the full version in a new page. 
+    - Hence, I decided to implement a accordion like component for the user activities.
+2. 
+    - The user profile has no photo for now, but it can have it later.
+    - So, I adopted a vertical stacking layout to support adding of new data in the future.
