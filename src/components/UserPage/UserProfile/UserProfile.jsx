@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './index.css'
 import Skeleton from 'react-loading-skeleton'
-const UserProfile = ({ email, phone, address }) => {
+const UserProfile = ({ id }) => {
     const addressRef = useRef(null)
     const [user, setUser] = useState({})
     const [shown, setShown] = useState(false)
@@ -12,7 +12,7 @@ const UserProfile = ({ email, phone, address }) => {
         setShown(!shown)
     }
     const fetchUser = async () => {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users/1')
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
         const result = await response.json()
         setUser(result)
         
