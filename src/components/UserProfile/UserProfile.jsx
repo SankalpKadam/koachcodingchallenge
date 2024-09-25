@@ -1,26 +1,43 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../UserProfile/index.css'
 import Mobile from '../../images/call.png'
 import Address from '../../images/maps-and-flags.png'
 import Mail from '../../images/mail.png'
+import Skeleton from 'react-loading-skeleton'
 const UserProfile = ({ email, phone, address }) => {
     const addressRef = useRef(null)
+    const [user, setUser] = useState({})
     const [shown, setShown] = useState(false)
-    const userData = { email, phone, address }
+    // const userData = { email, phone, address }
     const handleClick = (e) => {
         e.preventDefault()
         addressRef.current.style.display=shown?"none":"block"
         setShown(!shown)
     }
+    const fetchUser = async () => {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users/1')
+        const result = await response.json()
+        setUser(result)
+        
+    }
+    useEffect(()=>{
+        setTimeout(()=>{
+
+            
+            fetchUser()
+        }
+            
+        ,2000)
+    },[])
     return (
         <div className="userProfile">
             <div className='mandatoryDetails'>
 
                 <p className='userName'>
-                    Leanne Graham
+                    {user.name || <Skeleton/>}
                 </p>
                 <p className='userID'>
-                    #lg1234
+                    {user.username || <Skeleton/>}
                 </p>
             </div>
             <div className='additionalDetails'>
@@ -33,34 +50,36 @@ const UserProfile = ({ email, phone, address }) => {
 
                 <div className='showAdditionalDetails' >
                     <p>
-                        Email
+                        {user.email ? "Email" : <Skeleton/>}
                     </p>
                     <p>
-                        johnDoe@gmail.com
-                    </p>
-                </div>
-                <div className='showAdditionalDetails'>
-                    <p>
-                        Phone
-                    </p>
-                    <p>
-                        123-456-7890
+                        {user.email || <Skeleton/>}
                     </p>
                 </div>
                 <div className='showAdditionalDetails'>
                     <p>
-                        Address
+                        {user.phone?"Phone":<Skeleton/>}
                     </p>
                     <p>
-                        1234 Jane St., Louis Blvd. NYC - 32009
+                        {user.phone ? user.phone.split(' ')[0]: <Skeleton/>}
                     </p>
                 </div>
                 <div className='showAdditionalDetails'>
                     <p>
-                        Website
+                        {user.address ? "Address" : <Skeleton/>}
                     </p>
                     <p>
-                        hildegard.org
+                       {
+                        user.address ? user.address.street+", "+user.address.suite+", "+user.address.city+", "+user.address.zipcode : <Skeleton/>
+                       }
+                    </p>
+                </div>
+                <div className='showAdditionalDetails'>
+                    <p>
+                        {user.website ?"Wedbsite":<Skeleton/>}
+                    </p>
+                    <p>
+                        {user.website || <Skeleton/>}
                     </p>
                 </div>
             </div>

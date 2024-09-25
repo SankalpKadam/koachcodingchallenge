@@ -16,16 +16,23 @@
     margin: 0;
     display: inline-block;
     word-break: break-all;
+    width: 90%;
 }
 
 .userID{
     color: #bcbcbc;
     font-weight: bold;
     margin: 0;
+    width: 90%;
 }
 
 .mandatoryDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    width: 100%;
+
 }
 .additionalDetails{
     margin-top: 2rem;
