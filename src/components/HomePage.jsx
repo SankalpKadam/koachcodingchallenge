@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import UserCard from './UserCard'
 import './index.css'
 import AbstactUserCard from './AbstactUserCard'
-const ListUsers = () => {
+const HomePage = () => {
     const [userList, setList] = useState([])
     const [loading, setLoading] = useState(true)
     // Fetch all users from the API
@@ -38,4 +38,4 @@ const ListUsers = () => {
     )
 }
 
-export default ListUsers
+export default HomePage
