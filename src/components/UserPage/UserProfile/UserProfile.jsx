@@ -4,6 +4,7 @@ import Skeleton from 'react-loading-skeleton'
 const UserProfile = ({ id }) => {
     const addressRef = useRef(null)
     const [user, setUser] = useState({})
+    const [loading, setLoading] = useState(true)
     const handleClick = (e) => {
         e.preventDefault()
         addressRef.current.classList.toggle('showIt')
@@ -17,6 +18,7 @@ const UserProfile = ({ id }) => {
         } catch (error) {
             alert("Failed to fetch user, please retry")
         }
+        setLoading(false)
 
     }
     useEffect(() => {
@@ -29,10 +31,10 @@ const UserProfile = ({ id }) => {
             <div className='mandatoryDetails'>
 
                 <p className='userName'>
-                    {user.name || <Skeleton /> /* shows loader component until name is not fetched */}
+                    {loading?<Skeleton />:user["name"] || "User Name Placeholder" /* shows loader component until name is not fetched and shows placeholder if user.name is not in the user object*/}
                 </p>
                 <p className='userID'>
-                    {user.username || <Skeleton />}
+                    {loading?<Skeleton />:user["username"] || "User Name Placeholder"}
                 </p>
             </div>
             <div className='additionalDetails'>
@@ -45,36 +47,36 @@ const UserProfile = ({ id }) => {
 
                 <div className='showAdditionalDetails' >
                     <p>
-                        {user.email ? "Email" : <Skeleton />}
+                        {user["email"] ? "Email" : <Skeleton />}
                     </p>
                     <p>
-                        {user.email || <Skeleton />}
-                    </p>
-                </div>
-                <div className='showAdditionalDetails'>
-                    <p>
-                        {user.phone ? "Phone" : <Skeleton />}
-                    </p>
-                    <p>
-                        {user.phone ? user.phone.split(' ')[0] : <Skeleton />}
+                        {loading?<Skeleton />:user["email"] || "User Email Placeholder"}
                     </p>
                 </div>
                 <div className='showAdditionalDetails'>
                     <p>
-                        {user.address ? "Address" : <Skeleton />}
+                        {user["phone"] ? "Phone" : <Skeleton />}
+                    </p>
+                    <p>
+                        {loading?<Skeleton />: user["phone"] ? user["phone"].split(' ')[0] : "123-456-7890"}
+                    </p>
+                </div>
+                <div className='showAdditionalDetails'>
+                    <p>
+                        {user["address"] ? "Address" : <Skeleton />}
                     </p>
                     <p>
                         {
-                            user.address ? user.address.street + ", " + user.address.suite + ", " + user.address.city + ", " + user.address.zipcode : <Skeleton />
+                            loading?<Skeleton />:user["address"] ? user["address"]["street"] + ", " + user["address"]["suite"] + ", " + user["address"]["city"] + ", " + user["address"]["zipcode"] : "Address placeholder"
                         }
                     </p>
                 </div>
                 <div className='showAdditionalDetails'>
                     <p>
-                        {user.website ? "Website" : <Skeleton />}
+                        {user["website"] ? "Website" : <Skeleton />}
                     </p>
                     <p>
-                        {user.website || <Skeleton />}
+                        {loading?<Skeleton />:user["website"] || "Website placeholder"}
                     </p>
                 </div>
             </div>
