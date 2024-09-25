@@ -13,10 +13,7 @@ const ListUsers = () => {
     }
 
     useEffect(() => {
-        // setTimeout(() => {
-            // userGet();
             fetchUsers()
-        // }, 1000)
     }, [])
     return (
         <div className='listUsers'>
