@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import '../UserActivities/index.css'
+import './index.css'
 import ActivityCard from './ActivityCard';
 import LoadingCard from './LoadingCard';
 import Skeleton from 'react-loading-skeleton';
@@ -52,26 +52,25 @@ const UserActivities = () => {
         ];
 
     const [loading, setLoading] = useState(true)
-    const [activities, setActivities]  = useState([])
+    const [activities, setActivities] = useState([])
     const fetchActivities = async () => {
         const response = await fetch('https://jsonplaceholder.typicode.com/users/1/posts')
         const result = await response.json()
         setActivities(result)
         setLoading(false)
     }
-    useEffect(()=>{
-        setTimeout(()=>{
+    useEffect(() => {
+        setTimeout(() => {
             fetchActivities();
-        },2000)
-    },[])
+        }, 2000)
+    }, [])
     return (
         <div className='userActivities'>
             <p className='title'>Activity Feed</p>
             <div className='cards'>
-
-            {
-                loading?<LoadingCard listCount ={5}/>:activities.map((item,index)=><ActivityCard id={index} title = {item.title} body={item.body} key={index} />)
-            }
+                {
+                    loading ? <LoadingCard listCount={5} /> : activities.map((item, index) => <ActivityCard id={index} title={item.title} body={item.body} key={index} />)
+                }
             </div>
         </div>
     )

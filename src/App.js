@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import UserActivities from './components/UserActivities/UserActivities';
-import UserProfile from './components/UserProfile/UserProfile';
+import UserActivities from './components/UserPage/UserActivities/UserActivities';
+import UserProfile from './components/UserPage/UserProfile/UserProfile';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 function App() {

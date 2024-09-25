@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import '../UserProfile/index.css'
-import Mobile from '../../images/call.png'
-import Address from '../../images/maps-and-flags.png'
-import Mail from '../../images/mail.png'
+import './index.css'
 import Skeleton from 'react-loading-skeleton'
 const UserProfile = ({ email, phone, address }) => {
     const addressRef = useRef(null)
