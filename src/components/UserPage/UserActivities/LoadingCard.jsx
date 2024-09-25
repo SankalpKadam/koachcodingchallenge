@@ -3,9 +3,9 @@ import Skeleton from 'react-loading-skeleton'
 
 const LoadingCard = ({listCount}) => {
   return (
-        Array(listCount).fill(0).map((item)=>
+        Array(listCount).fill(0).map((item, index)=>
         (
-            <div className='loadingCard'>
+            <div className='loadingCard' key={index}>
                 <Skeleton style={{height:'90%', width:"90%"}}/>
                 <Skeleton style={{height:'90%', width:"98%"}}/>
                 <Skeleton style={{height:'90%', width:"90%"}}/>
