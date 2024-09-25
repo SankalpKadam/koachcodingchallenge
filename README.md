@@ -1,6 +1,7 @@
 # Koach Coding Challenge
 
-Candidate - ***Sankalp Kadam***.
+Candidate - ***Sankalp Kadam***  
+
 Deployment Link - _https://koach-coding-challenge.vercel.app/_
 
 ### Technologies Used -
