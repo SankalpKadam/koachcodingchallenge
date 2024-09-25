@@ -44,7 +44,7 @@
     align-items: center;
     padding-bottom: 1rem;
 }
-.showAdditional{
+.showAdditionalBtn{
     flex: 1;
     background-color: transparent;
     border: transparent;
@@ -62,7 +62,6 @@
     font-size: 1.5rem;
     font-weight: 600;
     padding: 0;
-    /* padding-bottom: 1rem; */
     margin: 0;
     flex: 1;
 }
