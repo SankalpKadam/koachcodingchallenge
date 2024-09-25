@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import UserCard from './subComponent/UserCard'
 import './index.css'
 import AbstactUserCard from '../Loaders/AbstactUserCard'
@@ -8,20 +8,20 @@ const HomePage = () => {
     // Fetch all users from the API
     const fetchUsers = async () => {
         try {
-            
-            const response = await fetch('https://jsonplaceholder.typicode.com/users/',{
-                method:'GET'
+
+            const response = await fetch('https://jsonplaceholder.typicode.com/users/', {
+                method: 'GET'
             })
             const result = await response.json()
             setList(result)
         } catch (error) {
-            alert("Refresh the page some error occured")    
+            alert("Refresh the page some error occured")
         }
         setLoading(false)
     }
 
     useEffect(() => {
-            fetchUsers()
+        fetchUsers()
     }, [])
     return (
         <div className='listUsers'>
