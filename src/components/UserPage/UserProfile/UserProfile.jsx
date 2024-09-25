@@ -72,7 +72,7 @@ const UserProfile = ({ id }) => {
                 </div>
                 <div className='showAdditionalDetails'>
                     <p>
-                        {user.website ?"Wedbsite":<Skeleton/>}
+                        {user.website ?"Website":<Skeleton/>}
                     </p>
                     <p>
                         {user.website || <Skeleton/>}

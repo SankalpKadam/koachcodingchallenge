@@ -21,10 +21,7 @@ const ListUsers = () => {
                 Users
             </p>
             <div className='list'>
-
                 {loading ? <AbstactUserCard /> : userList.map((item, index) => <UserCard id={item.id} name={item.name} key={item.id} />)}
-
-
             </div>
         </div>
     )
