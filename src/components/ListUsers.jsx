@@ -7,11 +7,16 @@ const ListUsers = () => {
     const [loading, setLoading] = useState(true)
     // Fetch all users from the API
     const fetchUsers = async () => {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users/',{
-            method:'GET'
-        })
-        const result = await response.json()
-        setList(result)
+        try {
+            
+            const response = await fetch('https://jsonplaceholder.typicode.com/users/',{
+                method:'GET'
+            })
+            const result = await response.json()
+            setList(result)
+        } catch (error) {
+            alert("Refresh the page some error occured")    
+        }
         setLoading(false)
     }
 
