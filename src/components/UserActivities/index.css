@@ -67,6 +67,7 @@
 }
 .cards{
     margin: 0 2% 2% 2%;
+    height: 100%;
 }
 @media only screen and (min-width:992px) {
     .cards, .userActivities{
@@ -84,5 +85,8 @@
         overflow-x: hidden;
     }
   }
-
-
+.loadingCard{
+    display: grid;
+    grid-template-columns:0.1fr 1fr 0.2fr;
+    height: 15%;
+}

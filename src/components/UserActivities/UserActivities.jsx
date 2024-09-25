@@ -52,18 +52,25 @@ const UserActivities = () => {
         ];
 
     const [loading, setLoading] = useState(true)
+    const [activities, setActivities]  = useState([])
+    const fetchActivities = async () => {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users/1/posts')
+        const result = await response.json()
+        setActivities(result)
+        setLoading(false)
+    }
     useEffect(()=>{
         setTimeout(()=>{
-            setLoading(false)
+            fetchActivities();
         },2000)
     },[])
     return (
         <div className='userActivities'>
-            <p className='title'><Skeleton count={3}/></p>
+            <p className='title'>Activity Feed</p>
             <div className='cards'>
 
             {
-                loading?<LoadingCard/>:data.map((item,index)=><ActivityCard id={index} title = {item.title} body={item.body} key={index} />)
+                loading?<LoadingCard listCount ={5}/>:activities.map((item,index)=><ActivityCard id={index} title = {item.title} body={item.body} key={index} />)
             }
             </div>
         </div>
