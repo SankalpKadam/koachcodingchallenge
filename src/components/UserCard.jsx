@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './index.css'
 import { Link } from 'react-router-dom'
-const UserCard = ({ id }) => {
+const UserCard = ({ id, name }) => {
 
     return (
         <div className='userCard'>
@@ -9,7 +9,7 @@ const UserCard = ({ id }) => {
                 {id}
             </div>
             <div className='userListName'>
-                John Doe
+                {name}
             </div>
             <button className='userListBtn'>
                 <Link to={`users/${id}`} style={{textDecoration:'none', color:'#bcbcbc'}}>

@@ -5,7 +5,6 @@ const UserProfile = ({ id }) => {
     const addressRef = useRef(null)
     const [user, setUser] = useState({})
     const [shown, setShown] = useState(false)
-    // const userData = { email, phone, address }
     const handleClick = (e) => {
         e.preventDefault()
         addressRef.current.style.display=shown?"none":"block"

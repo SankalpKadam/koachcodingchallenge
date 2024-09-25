@@ -1,31 +1,33 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useMemo, useState } from 'react'
 import UserCard from './UserCard'
 import './index.css'
+import AbstactUserCard from './AbstactUserCard'
 const ListUsers = () => {
+    const [userList, setList] = useState([])
+    const [loading, setLoading] = useState(true)
+    const fetchUsers = async () => {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users/')
+        const result = await response.json()
+        setList(result)
+        setLoading(false)
+    }
 
+    useEffect(() => {
+        // setTimeout(() => {
+            // userGet();
+            fetchUsers()
+        // }, 1000)
+    }, [])
     return (
         <div className='listUsers'>
-            <p>
+            <p className='userName'>
                 Users
             </p>
             <div className='list'>
 
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                <UserCard id={1}/>
-                
+                {loading ? <AbstactUserCard /> : userList.map((item, index) => <UserCard id={item.id} name={item.name} key={item.id} />)}
+
+
             </div>
         </div>
     )
