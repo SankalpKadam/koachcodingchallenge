@@ -1,7 +1,7 @@
 import React from 'react'
 import UserProfile from './UserProfile/UserProfile'
 import UserActivities from './UserActivities/UserActivities'
-import './index.css'
+import './UserPage.css'
 import { useParams } from 'react-router-dom'
 const UserPage = () => {
     const {id} = useParams()

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import './index.css'
+import './UserProfile.css'
 import Skeleton from 'react-loading-skeleton'
 const UserProfile = ({ id }) => {
     const addressRef = useRef(null)

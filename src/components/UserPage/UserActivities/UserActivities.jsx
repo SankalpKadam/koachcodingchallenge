@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import './index.css'
+import './UserActivity.css'
 import ActivityCard from './ActivityCard';
 import LoadingCard from './LoadingCard';
 import Skeleton from 'react-loading-skeleton';
