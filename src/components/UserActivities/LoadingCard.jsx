@@ -1,0 +1,18 @@
+import React from 'react'
+import Skeleton from 'react-loading-skeleton'
+
+const LoadingCard = ({listCount}) => {
+  return (
+        Array(listCount).fill(0).map((item)=>
+        (
+            <div className='loadingCard'>
+                <Skeleton style={{height:'90%', width:"90%"}}/>
+                <Skeleton style={{height:'90%', width:"98%"}}/>
+                <Skeleton style={{height:'90%', width:"90%"}}/>
+            </div>
+        )
+        )
+  )
+}
+
+export default LoadingCard
