@@ -1,12 +1,9 @@
 .userPage {
-
     display: grid;
     gap: 1rem;
     align-items: center;
     justify-content: center;
-  
-    max-width: 1700px;
-  
+    max-width: 1000px;
   }
   
   .activities {
