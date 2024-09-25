@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import UserCard from './UserCard'
+import UserCard from './subComponent/UserCard'
 import './index.css'
-import AbstactUserCard from './AbstactUserCard'
+import AbstactUserCard from '../Loaders/AbstactUserCard'
 const HomePage = () => {
     const [userList, setList] = useState([])
     const [loading, setLoading] = useState(true)

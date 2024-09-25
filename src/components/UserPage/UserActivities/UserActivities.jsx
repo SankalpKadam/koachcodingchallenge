@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './UserActivity.css'
-import ActivityCard from './ActivityCard';
-import LoadingCard from './LoadingCard';
+import ActivityCard from './subComponent/ActivityCard';
+import LoadingCard from '../../Loaders/LoadingCard';
 import Skeleton from 'react-loading-skeleton';
 const UserActivities = ({id}) => {
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './index.css'
+import '../index.css'
 import { Link } from 'react-router-dom'
 const UserCard = ({ id, name }) => {
 // Component for rendering individual user card on the home page
