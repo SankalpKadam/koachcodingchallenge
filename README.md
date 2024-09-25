@@ -47,3 +47,5 @@ _Assumptions_ and how they align with my design
 2. 
     - The user profile has no photo for now, but it can have it later.
     - So, I adopted a vertical stacking layout to support adding of new data in the future.
+  
+![Design of the user page showing user details and activity!](/images/koachUI.jpg)
