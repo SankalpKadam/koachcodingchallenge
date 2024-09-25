@@ -13,12 +13,9 @@ function App() {
     <div className="App">
       <SkeletonTheme baseColor="#e1e2e2" highlightColor="#bcbcbc">
         <BrowserRouter>
-          {/* <UserProfile email={"sankalptop"} phone={1234567} address={"Hello world"} />
-        <UserActivities /> */}
         <Routes path='/'>
             <Route index element={<ListUsers/>}/>
             <Route path='users/:id' element={<UserPage/>}/>
-          {/* <UserPage /> */}
         </Routes>
         </BrowserRouter>
       </SkeletonTheme>
