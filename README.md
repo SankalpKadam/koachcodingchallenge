@@ -1,6 +1,6 @@
 # Koach Coding Challenge
 
-Candidate - ***Sankalp Kadam***
+Candidate - ***Sankalp Kadam***.
 Deployment Link - _https://koach-coding-challenge.vercel.app/_
 
 ### Technologies Used -
@@ -38,7 +38,7 @@ _React_, _JavaScript_, _HTML_, _CSS_, _Vercel (For Deployment)_
 
 ### My thoughts behind the design
 
-_Assumptions_ and how they align with my design
+_Assumptions_ and how they align with my design.
 1. 
     - The post can contain futher details like media, larger text, so it would be better to have a list to display a short version of it and then clicking on it can show the full version in a new page. 
     - Hence, I decided to implement a accordion like component for the user activities.
